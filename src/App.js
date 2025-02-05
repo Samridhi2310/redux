@@ -57,17 +57,17 @@ function App() {
   } 
 
   return (
-    <div className="bg-slate-300">
+    <div className="m-10 place-items-center bg-slate-200 md:p-40">
       <input
         type="text"
         placeholder="Enter to do"
         value={todo}
-        onChange={(e) => setTodo(e.target.value)} className="bg-slate-950" />
-      <button onClick={HandleAddToDo}>Create To Do</button>
+        onChange={(e) => setTodo(e.target.value)} className="" />
+      <button onClick={HandleAddToDo}>Create To Do</button><br/>
 
-      <ul>
+      <ul className="">
         {todos.map((item) => (
-          <li key={item.id} className="flex">
+          <li key={item.id} className="flex md:gap-x-6 ">
             {item.id} - {item.todo}
             <button onClick={() => HandleDeleteToDo(item.id)}>Delete</button>
             <button onClick={() => HandleEditClick(item.id, item.todo)}>Edit</button>
@@ -80,8 +80,9 @@ function App() {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         style={customStyles}
-        contentLabel="Edit To-Do"
+        contentLabel="Edit To-Do" 
       >
+        <div className="flex md:gap-4">
         <input
           type="text"
           value={editText}
@@ -89,7 +90,9 @@ function App() {
         />
         <button onClick={HandleUpdateToDo}>Save</button>
         <button onClick={closeModal}>Cancel</button>
+        </div>
       </Modal>
+     
     </div>
   );
 }
