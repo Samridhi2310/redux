@@ -5,7 +5,7 @@ import { addToDo, deleteToDo, updateToDo } from "./features/ToDoUser/ToDoSlice";
 import Modal from "react-modal";
 
 function App() {
-  const customStyles = {
+  const customStyles = { 
     content: {
       top: "50%",
       left: "50%",
